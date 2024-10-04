@@ -55,8 +55,7 @@ pipeline{
         }
         stage('Push to Artifactory'){
         steps{
-            sh "cd /root/Java_app_3.0/target"
-            sh "curl -X PUT -u admin:Thanks@5 -T /root/Java_app_3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar http://13.126.191.246:8082/artifactory/example-repo-local/"
+        sh "curl -X PUT -u admin:Thanks@5 -T /root/Java_app_3.0/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar http://13.126.191.246:8082/artifactory/example-repo-local/"
         }
         }    
         stage('Docker Image Build'){
